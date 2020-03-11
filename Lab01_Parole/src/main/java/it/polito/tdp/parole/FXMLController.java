@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import java.util.*;
 
 public class FXMLController {
 	
@@ -31,15 +32,41 @@ public class FXMLController {
 
     @FXML
     private Button btnReset;
+    
+    @FXML
+    private Button btnCancella;
+    
+    @FXML
+    private TextArea txtTemp;
+    
 
     @FXML
     void doInsert(ActionEvent event) {
     	// TODO
+    	long tempInizio =System.nanoTime();
+    	long tempFine;
+    	String ts = "";
+    	
+    	ts = txtParola.getText();
+    	
+    	elenco.addParola(ts);
+    	
+    	txtParola.clear();
+    	txtResult.setText(elenco.toString());
+    	tempFine = System.nanoTime();
+    	txtTemp.appendText("Tempo di esecuzione: "+ (tempFine-tempInizio) +"\n");    	
     }
 
     @FXML
     void doReset(ActionEvent event) {
     	// TODO
+    	long tempInizio =System.nanoTime();
+    	long tempFine;
+    	
+    	txtResult.clear();
+    	elenco.reset();
+    	tempFine = System.nanoTime();
+    	txtTemp.appendText("Tempo di esecuzione: "+ (tempFine-tempInizio) +"\n");
     }
 
     @FXML
@@ -51,4 +78,21 @@ public class FXMLController {
 
         elenco = new Parole() ;
     }
+    
+    @FXML
+    void doDelete(ActionEvent event) {
+    	
+    	long tempInizio =System.nanoTime();
+    	long tempFine;
+    	String daCancellare = txtResult.getSelectedText();
+    	
+    	elenco.delete(daCancellare);
+    	
+    	txtResult.setText(elenco.toString());
+    	tempFine = System.nanoTime();
+    	txtTemp.appendText("Tempo di esecuzione: "+ (tempFine-tempInizio) +"\n");
+
+    	
+    }
+    
 }
