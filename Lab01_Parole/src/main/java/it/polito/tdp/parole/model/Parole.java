@@ -3,7 +3,7 @@ package it.polito.tdp.parole.model;
 import java.util.*;
 
 public class Parole {
-		
+		//COmm
 	private List <String> listaParole;
 	
 	public Parole() {
