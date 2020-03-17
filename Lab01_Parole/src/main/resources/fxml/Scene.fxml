@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.parole.FXMLController">
+<BorderPane prefHeight="340.0" prefWidth="366.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.polito.tdp.parole.FXMLController">
    <top>
       <Label text="Lab 1 - Lista di Parole" BorderPane.alignment="CENTER">
          <BorderPane.margin>
@@ -35,23 +35,19 @@
       <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
    </padding>
    <bottom>
-      <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER">
+      <HBox BorderPane.alignment="CENTER_RIGHT">
          <children>
-            <TextArea fx:id="txtTemp" editable="false" prefHeight="100.0" prefWidth="160.0">
+            <Button fx:id="btnReset" alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#doReset" prefHeight="57.0" prefWidth="62.0" text="Reset" />
+            <Button fx:id="btnCancella" mnemonicParsing="false" onAction="#doCancella" prefHeight="57.0" prefWidth="85.0" text="Cancella">
                <HBox.margin>
-                  <Insets top="10.0" />
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
+            <TextArea fx:id="txtPerformance" prefHeight="57.0" prefWidth="200.0" promptText="perfromance...">
+               <HBox.margin>
+                  <Insets left="5.0" />
                </HBox.margin>
             </TextArea>
-            <Button fx:id="btnCancella" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#doDelete" text="Cancella">
-               <HBox.margin>
-                  <Insets left="5.0" />
-               </HBox.margin>
-            </Button>
-            <Button fx:id="btnReset" alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#doReset" text="Reset">
-               <HBox.margin>
-                  <Insets left="5.0" />
-               </HBox.margin>
-            </Button>
          </children>
       </HBox>
    </bottom>
