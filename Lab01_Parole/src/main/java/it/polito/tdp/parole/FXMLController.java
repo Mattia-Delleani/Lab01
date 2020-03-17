@@ -54,7 +54,7 @@ public class FXMLController {
     	txtParola.clear();
     	txtResult.setText(elenco.toString());
     	tempFine = System.nanoTime();
-    	txtTemp.appendText("Tempo di esecuzione: "+ (tempFine-tempInizio) +"\n");    	
+    	txtTemp.appendText("Tempo di esecuzione: "+ (tempFine-tempInizio)/1e9 +"\n");    	
     }
 
     @FXML
@@ -66,7 +66,7 @@ public class FXMLController {
     	txtResult.clear();
     	elenco.reset();
     	tempFine = System.nanoTime();
-    	txtTemp.appendText("Tempo di esecuzione: "+ (tempFine-tempInizio) +"\n");
+    	txtTemp.appendText("Tempo di esecuzione: "+ (tempFine-tempInizio)/1e9 +"\n");
     }
 
     @FXML
@@ -90,7 +90,7 @@ public class FXMLController {
     	
     	txtResult.setText(elenco.toString());
     	tempFine = System.nanoTime();
-    	txtTemp.appendText("Tempo di esecuzione: "+ (tempFine-tempInizio) +"\n");
+    	txtTemp.appendText("Tempo di esecuzione: "+ (tempFine-tempInizio)/1e9 +"\n");
 
     	
     }
